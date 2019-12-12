@@ -487,7 +487,7 @@
             this.panel4.Location = new System.Drawing.Point(351, 424);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(324, 184);
+            this.panel4.Size = new System.Drawing.Size(324, 180);
             this.panel4.TabIndex = 19;
             // 
             // btnHuyVe

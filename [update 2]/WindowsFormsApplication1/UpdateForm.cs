@@ -43,11 +43,14 @@ namespace WindowsFormsApplication1
             this.checkBox2.Text = oldTravel.Người_sử_dụng;
             this.txtSoLuong.Text = Convert.ToString(oldTravel.Số_lượng);
             this.txtMoney.Text = Convert.ToString(oldTravel.Tiền);
-            this.Bussiness.EditTravel(this.TravelID, this.txtID, this.txtHo, this.txtTenLot, this.txtTen,
-                this.txtDiaChi, this.txtMaVung, this.txtSDT, this.cbKhoiHanh, this.cbNoiDen, this.cbPhuongTien,
-                this.rdbTietKiem, this.rdbThuong, this.rdbThuongGia, this.checkBox1, this.checkBox2,
-                this.txtSoLuong, this.txtMoney);
-            MessageBox.Show("successfully.");
+              public void EditTravel(int id,string ID, string Họ, string Tên_đệm, string Tên, string Địa_chỉ,
+            int Mã_vùng, string Số_Điện_Thoại, string Khởi_hành, string Nơi_đến, string Phương_Tiện,
+            string Loại_vé, string Người_sử_dụng, int Số_lượng, int Tiền)
+        {
+            this.Bussiness.EditTravel(this.TravelID, txtID.Text, txtHo.Text, txtTenLot.Text, txtTen.Text,
+                txtDiaChi.Text, this.txtMaVung, txtSDT.Text, cbKhoiHanh.Text, cbNoiDen.Text, cbPhuongTien.Text,
+                 this.txtSoLuong, this.txtMoney);
+            MessageBox.Show("Update class successfully.");
         }
 
         void UpdateClassForm_Load(object sender, EventArgs e)
