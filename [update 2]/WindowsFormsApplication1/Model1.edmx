@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TRAVELMANModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="THONGTINKHACHHANG">
+          <Key>
+            <PropertyRef Name="Số Thứ Tự" />
+          </Key>
+          <Property Name="Số Thứ Tự" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Họ" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tên đệm" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tên" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Địa chỉ" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mã vùng" Type="int" />
+          <Property Name="Số Điện Thoại" Type="varchar" MaxLength="50" />
+          <Property Name="Khởi hành" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nơi đến" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phương Tiện" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Loại vé" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Người sử dụng" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Số lượng" Type="int" />
+          <Property Name="Tiền" Type="int" />
+        </EntityType>
+        <EntityContainer Name="TRAVELMANModelStoreContainer">
+          <EntitySet Name="THONGTINKHACHHANG" EntityType="Self.THONGTINKHACHHANG" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TRAVELMANModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="THONGTINKHACHHANG">
+          <Key>
+            <PropertyRef Name="Số_Thứ_Tự" />
+          </Key>
+          <Property Name="Số_Thứ_Tự" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Họ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tên_đệm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tên" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Địa_chỉ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mã_vùng" Type="Int32" />
+          <Property Name="Số_Điện_Thoại" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Khởi_hành" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nơi_đến" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phương_Tiện" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Loại_vé" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Người_sử_dụng" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Số_lượng" Type="Int32" />
+          <Property Name="Tiền" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="TRAVELMANAGEMENT2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="THONGTINKHACHHANGs" EntityType="Self.THONGTINKHACHHANG" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TRAVELMANModelStoreContainer" CdmEntityContainer="TRAVELMANAGEMENT2">
+          <EntitySetMapping Name="THONGTINKHACHHANGs">
+            <EntityTypeMapping TypeName="TRAVELMANModel.THONGTINKHACHHANG">
+              <MappingFragment StoreEntitySet="THONGTINKHACHHANG">
+                <ScalarProperty Name="Số_Thứ_Tự" ColumnName="Số Thứ Tự" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Họ" ColumnName="Họ" />
+                <ScalarProperty Name="Tên_đệm" ColumnName="Tên đệm" />
+                <ScalarProperty Name="Tên" ColumnName="Tên" />
+                <ScalarProperty Name="Địa_chỉ" ColumnName="Địa chỉ" />
+                <ScalarProperty Name="Mã_vùng" ColumnName="Mã vùng" />
+                <ScalarProperty Name="Số_Điện_Thoại" ColumnName="Số Điện Thoại" />
+                <ScalarProperty Name="Khởi_hành" ColumnName="Khởi hành" />
+                <ScalarProperty Name="Nơi_đến" ColumnName="Nơi đến" />
+                <ScalarProperty Name="Phương_Tiện" ColumnName="Phương Tiện" />
+                <ScalarProperty Name="Loại_vé" ColumnName="Loại vé" />
+                <ScalarProperty Name="Người_sử_dụng" ColumnName="Người sử dụng" />
+                <ScalarProperty Name="Số_lượng" ColumnName="Số lượng" />
+                <ScalarProperty Name="Tiền" ColumnName="Tiền" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
