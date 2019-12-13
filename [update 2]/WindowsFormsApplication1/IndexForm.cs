@@ -16,17 +16,26 @@ namespace WindowsFormsApplication1
         private TravelManagement Business;
         public IndexForm()
         {
+           
             this.Business = new TravelManagement();
             this.Load += IndexForm_Load;
-            //this.btnXemGiaTien.Click +=btnXemGiaTien_Click;
+         //   this.btnXemGiaTien.Click += btnXemGiaTien_Click;
+            this.btnThanhToan.Click += btnThanhToan_Click;
             InitializeComponent();
+        }
+
+        void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            Receipt rp = new Receipt();
+            rp.ShowDialog();
         }
 
         //void btnXemGiaTien_Click(object sender, EventArgs e)
         //{
-        //    var Money = new MoneyForm();
-        //    Money.Show(this);
-        //
+        //   MoneyForm mf = new MoneyForm();
+        //    mf.ShowDialog();
+        //}
+
         private void LoadAll()
         {
             var travel = this.Business.GetTravel();

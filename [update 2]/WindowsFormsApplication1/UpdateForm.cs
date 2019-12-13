@@ -38,19 +38,18 @@ namespace WindowsFormsApplication1
             this.cbPhuongTien.Text = oldTravel.Phương_Tiện;
             this.rdbTietKiem.Text = oldTravel.Loại_vé;
             this.rdbThuong.Text = oldTravel.Loại_vé;
-            this.rdbThuongGia.Text = oldTravel.Loại_vé;          
+            this.rdbThuongGia.Text = oldTravel.Loại_vé;
             this.checkBox1.Text = oldTravel.Người_sử_dụng;
             this.checkBox2.Text = oldTravel.Người_sử_dụng;
             this.txtSoLuong.Text = Convert.ToString(oldTravel.Số_lượng);
             this.txtMoney.Text = Convert.ToString(oldTravel.Tiền);
+        }
+
               public void EditTravel(int id,string ID, string Họ, string Tên_đệm, string Tên, string Địa_chỉ,
             int Mã_vùng, string Số_Điện_Thoại, string Khởi_hành, string Nơi_đến, string Phương_Tiện,
             string Loại_vé, string Người_sử_dụng, int Số_lượng, int Tiền)
         {
-            this.Bussiness.EditTravel(this.TravelID, txtID.Text, txtHo.Text, txtTenLot.Text, txtTen.Text,
-                txtDiaChi.Text, this.txtMaVung, txtSDT.Text, cbKhoiHanh.Text, cbNoiDen.Text, cbPhuongTien.Text,
-                 this.txtSoLuong, this.txtMoney);
-            MessageBox.Show("Update class successfully.");
+            
         }
 
         void UpdateClassForm_Load(object sender, EventArgs e)
