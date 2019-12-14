@@ -13,12 +13,11 @@ namespace WindowsFormsApplication1
     public partial class MoneyForm : Form
     {
         private TravelManagement Business;
-        //IndexForm IDForm1;
-        public MoneyForm(IndexForm IDForm)
+        
+        public MoneyForm()
         {
             this.Business = new TravelManagement();
             this.Load += MoneyForm_Load;
-            //this.IDForm1 = IDForm;
             InitializeComponent();
         }
 
