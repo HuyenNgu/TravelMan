@@ -62,6 +62,7 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnTongCong = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnHuyVe = new System.Windows.Forms.Button();
             this.txtMoney = new System.Windows.Forms.TextBox();
@@ -72,6 +73,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.rtReceipt = new System.Windows.Forms.RichTextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.Panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.Panel1.SuspendLayout();
@@ -419,7 +422,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(233, 9);
+            this.label10.Location = new System.Drawing.Point(222, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(407, 38);
             this.label10.TabIndex = 20;
@@ -467,6 +470,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.btnTongCong);
             this.panel4.Controls.Add(this.btnReset);
             this.panel4.Controls.Add(this.btnHuyVe);
             this.panel4.Controls.Add(this.txtMoney);
@@ -479,9 +483,19 @@
             this.panel4.Size = new System.Drawing.Size(431, 221);
             this.panel4.TabIndex = 19;
             // 
+            // btnTongCong
+            // 
+            this.btnTongCong.Location = new System.Drawing.Point(55, 146);
+            this.btnTongCong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTongCong.Name = "btnTongCong";
+            this.btnTongCong.Size = new System.Drawing.Size(115, 50);
+            this.btnTongCong.TabIndex = 9;
+            this.btnTongCong.Text = "Tổng cộng";
+            this.btnTongCong.UseVisualStyleBackColor = true;
+            // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(261, 44);
+            this.btnReset.Location = new System.Drawing.Point(261, 16);
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(115, 50);
@@ -492,7 +506,7 @@
             // 
             // btnHuyVe
             // 
-            this.btnHuyVe.Location = new System.Drawing.Point(260, 129);
+            this.btnHuyVe.Location = new System.Drawing.Point(261, 77);
             this.btnHuyVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuyVe.Name = "btnHuyVe";
             this.btnHuyVe.Size = new System.Drawing.Size(115, 50);
@@ -511,7 +525,7 @@
             // 
             // btnXemGiaTien
             // 
-            this.btnXemGiaTien.Location = new System.Drawing.Point(55, 131);
+            this.btnXemGiaTien.Location = new System.Drawing.Point(261, 146);
             this.btnXemGiaTien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXemGiaTien.Name = "btnXemGiaTien";
             this.btnXemGiaTien.Size = new System.Drawing.Size(115, 50);
@@ -523,7 +537,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(26, 18);
+            this.label14.Location = new System.Drawing.Point(50, 16);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(120, 32);
             this.label14.TabIndex = 2;
@@ -585,11 +599,30 @@
             this.label16.TabIndex = 23;
             this.label16.Text = "RECEIPT";
             // 
+            // lblTime
+            // 
+            this.lblTime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTime.Location = new System.Drawing.Point(1170, 710);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(198, 31);
+            this.lblTime.TabIndex = 24;
+            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
+            // 
+            // lblDate
+            // 
+            this.lblDate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDate.Location = new System.Drawing.Point(949, 710);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(215, 31);
+            this.lblDate.TabIndex = 25;
+            // 
             // IndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 750);
+            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.rtReceipt);
             this.Controls.Add(this.Panel3);
@@ -663,5 +696,8 @@
         protected System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.RichTextBox rtReceipt;
         private System.Windows.Forms.Label label16;
+        protected System.Windows.Forms.Button btnTongCong;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblDate;
     }
 }

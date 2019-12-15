@@ -19,13 +19,10 @@ namespace WindowsFormsApplication1
            
             this.Business = new TravelManagement();
             this.Load += IndexForm_Load;
-            this.btnXemGiaTien.Click +=btnXemGiaTien_Click;
-           // this.btnThanhToan.Click += btnThanhToan_Click;
-           // this.btnReset.Click +=btnReset_Click;
             InitializeComponent();
         }
 
-         void btnXemGiaTien_Click(object sender, EventArgs e)
+        private void btnXemGiaTien_Click(object sender, EventArgs e)
          {
              var MoneyForm = new MoneyForm();
              MoneyForm.ShowDialog();
@@ -55,6 +52,15 @@ namespace WindowsFormsApplication1
             txtSoLuong.Clear();
             txtTen.Clear();
             txtTenLot.Clear();
+            txtSoLuong.Clear();
+
+            rdbThuong.Checked = false;
+            rdbThuongGia.Checked = false;
+            rdbTietKiem.Checked = false;
+
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+        
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -70,9 +76,9 @@ namespace WindowsFormsApplication1
             String MaVung = (txtMaVung.Text);
             String SDT = (txtSDT.Text);
 
-            rtReceipt.AppendText("\tTravel Management System:\n"
+            rtReceipt.AppendText("\t\tTravel Management System:\n"
                
-                + "\n---------------------------------------------------------------"
+                + "\n----------------------------------------------------------------------------------------------------------------"
                 + "\nID:\t\t\t" + txtID.Text
                 + "\nHọ và Tên: " + txtHo.Text  + txtTenLot.Text  +  txtTen.Text             
                 + "\nĐịa Chỉ:\t\t\t" + txtDiaChi.Text
@@ -81,11 +87,20 @@ namespace WindowsFormsApplication1
                 + "\nNơi Khởi Hành:\t\t" + cbKhoiHanh.Text
                 + "\nNơi Đến:\t\t\t" + cbNoiDen.Text
                 + "\nPhương Tiện:\t\t\t" + cbPhuongTien.Text
-                + "\n---------------------------------------------------------------"
+                + "\n----------------------------------------------------------------------------------------------------------------"
                 + "\nTổng cộng:\t\t\t" + txtMoney.Text
-                + "\n---------------------------------------------------------------"
-                + "\n\n\t Cám ơn đã sử dụng Travel Management System"
+                + "\n----------------------------------------------------------------------------------------------------------------"
+                + "\n\n\t Cám ơn đã sử dụng bạn đã sử dụng hệ thống"
             );
+        }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+            DateTime Time = DateTime.Now;
+            lblTime.Text = Time.ToLongTimeString();
+
+            DateTime Date = DateTime.Now;
+            lblDate.Text = Time.ToLongDateString();
         }
 
     }
