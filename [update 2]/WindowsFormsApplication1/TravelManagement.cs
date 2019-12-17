@@ -79,5 +79,21 @@ namespace WindowsFormsApplication1
             var @travel = db.THONGTINKHACHHANGs.Find(id);
             return @travel;
         }
+
+        public int GetMoney(int MaKhoiHanh, int MaNoiDen)
+        {
+            var db = new testEntities();
+            var thongtingiatien = db.ThongTinGiaTiens.ToArray();
+            var tien = 0;
+            for (int i = 0; i < thongtingiatien.Length; i++)
+            {
+                if(thongtingiatien[i].Id == MaKhoiHanh || thongtingiatien[i].Id == MaNoiDen)
+                {
+                    tien += thongtingiatien[i].Gia_Tien;
+                }
+            }
+
+                return tien;
+        }
     }
 }

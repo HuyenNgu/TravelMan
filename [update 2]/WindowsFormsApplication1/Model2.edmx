@@ -4,7 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ThongTinGiaTien">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ten" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gia Tien" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="THONGTINKHACHHANG">
           <Key>
             <PropertyRef Name="Số Thứ Tự" />
@@ -26,10 +34,10 @@
           <Property Name="Tiền" Type="int" />
         </EntityType>
         <EntityContainer Name="testModelStoreContainer">
+          <EntitySet Name="ThongTinGiaTien" EntityType="Self.ThongTinGiaTien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THONGTINKHACHHANG" EntityType="Self.THONGTINKHACHHANG" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -55,7 +63,16 @@
         </EntityType>
         <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="THONGTINKHACHHANGs" EntityType="Self.THONGTINKHACHHANG" />
+          <EntitySet Name="ThongTinGiaTiens" EntityType="testModel.ThongTinGiaTien" />
         </EntityContainer>
+        <EntityType Name="ThongTinGiaTien">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ten" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gia_Tien" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -80,6 +97,15 @@
                 <ScalarProperty Name="Người_sử_dụng" ColumnName="Người sử dụng" />
                 <ScalarProperty Name="Số_lượng" ColumnName="Số lượng" />
                 <ScalarProperty Name="Tiền" ColumnName="Tiền" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThongTinGiaTiens">
+            <EntityTypeMapping TypeName="testModel.ThongTinGiaTien">
+              <MappingFragment StoreEntitySet="ThongTinGiaTien">
+                <ScalarProperty Name="Gia_Tien" ColumnName="Gia Tien" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -19,16 +19,25 @@ namespace WindowsFormsApplication1
            
             this.Business = new TravelManagement();
             this.Load += IndexForm_Load;
+            this.btnTongCong.Click += btnTongCong_Click;
             //this.btnXemGiaTien.Click +=btnXemGiaTien_Click;
             InitializeComponent();
             
         }
 
+        void btnTongCong_Click(object sender, EventArgs e)
+        {
+            var MaKhoiHanh = int.Parse(this.cbKhoiHanh.SelectedValue.ToString());
+            var MaNoiDen = int.Parse(this.cbNoiDen.SelectedValue.ToString());
+            var tongTien = this.Business.GetMoney(MaKhoiHanh,MaNoiDen);
+            this.txtMoney.Text = tongTien.ToString();
+        }
+
         void btnXemGiaTien_Click(object sender, EventArgs e)
         {
             var MoneyForm = new MoneyForm();
-            MoneyForm.ShowDialog();
-            this.LoadAll();
+            MoneyForm.Show();
+            this.Close();
         }
         private void LoadAll()
         {
@@ -37,6 +46,16 @@ namespace WindowsFormsApplication1
             var db = new testEntities();
             var travel = db.THONGTINKHACHHANGs.ToArray();
             this.grdTravel.DataSource = travel;
+
+            var DiaDiem = db.ThongTinGiaTiens.ToArray();
+            this.cbKhoiHanh.DataSource = DiaDiem;
+            this.cbKhoiHanh.DisplayMember = "ten";
+            this.cbKhoiHanh.ValueMember = "Id";
+
+            var DiaDiemNoiDen = db.ThongTinGiaTiens.ToArray();
+            this.cbNoiDen.DataSource = DiaDiemNoiDen;
+            this.cbNoiDen.DisplayMember = "ten";
+            this.cbNoiDen.ValueMember = "Id";
         }
 
         void IndexForm_Load(object sender, EventArgs e)
@@ -88,9 +107,9 @@ namespace WindowsFormsApplication1
                 + "\nDia Chi:\t\t\t" + txtDiaChi.Text
                 + "\nMa Vung:\t\t\t" + txtMaVung.Text
                 + "\nSĐT:\t\t\t" + txtSDT.Text
-                + "\nNoi Khoi Hanh:\t\t" + txtKhoiHanh.Text
-                + "\nNoi Den:\t\t\t" + txtNoiDen.Text
-                + "\nPhuong Tien:\t\t" + txtPhuongTien.Text
+                + "\nNoi Khoi Hanh:\t\t" + cbKhoiHanh.Text
+                + "\nNoi Den:\t\t\t" + cbNoiDen.Text
+                + "\nPhuong Tien:\t\t" + cbPhuongTien.Text
                 + "\n----------------------------------------------------------------------------------------------------------------"
                 + "\nTong cong:\t\t\t" + txtMoney.Text
                 + "\n----------------------------------------------------------------------------------------------------------------"
@@ -127,6 +146,7 @@ namespace WindowsFormsApplication1
                 
             }
         }
+
 
         private void rdbThuongGia_CheckedChanged(object sender, EventArgs e)
         {
