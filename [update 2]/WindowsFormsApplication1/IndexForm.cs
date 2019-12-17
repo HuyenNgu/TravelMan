@@ -16,13 +16,25 @@ namespace WindowsFormsApplication1
         private TravelManagement Business;
         public IndexForm()
         {
-           
+            InitializeComponent();
             this.Business = new TravelManagement();
             this.Load += IndexForm_Load;
             this.btnTongCong.Click += btnTongCong_Click;
-            //this.btnXemGiaTien.Click +=btnXemGiaTien_Click;
-            InitializeComponent();
+            this.btnXemGiaTien.Click +=btnXemGiaTien_Click;
+            this.btnHuyVe.Click += btnHuyVe_Click;
+            this.btnThanhToan.Click += btnThanhToan_Click;
             
+            
+        }
+
+        void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void btnHuyVe_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         void btnTongCong_Click(object sender, EventArgs e)
@@ -37,7 +49,6 @@ namespace WindowsFormsApplication1
         {
             var MoneyForm = new MoneyForm();
             MoneyForm.Show();
-            this.Close();
         }
         private void LoadAll()
         {

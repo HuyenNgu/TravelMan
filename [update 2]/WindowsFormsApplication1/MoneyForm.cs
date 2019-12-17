@@ -17,14 +17,7 @@ namespace WindowsFormsApplication1
         public MoneyForm()
         {
             this.Business = new TravelManagement();
-            this.Load += MoneyForm_Load;
             InitializeComponent();
         }
-
-        void MoneyForm_Load(object sender, EventArgs e)
-        {
-            this.ShowDialog();
-        }
-        
     }
 }
