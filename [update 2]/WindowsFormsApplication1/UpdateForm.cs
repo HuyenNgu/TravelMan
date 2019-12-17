@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1
             var oldTravel = this.Bussiness.GetTravel(this.TravelID);
             this.txtID.Text = oldTravel.ID;
             this.txtHo.Text = oldTravel.Họ;
-            this.txtTenLot.Text = oldTravel.Tên_đệm;
+            this.txtTenLot.Text = oldTravel.Tên_lót;
             this.txtTen.Text = oldTravel.Tên;
             this.txtDiaChi.Text = oldTravel.Địa_chỉ;
             this.txtMaVung.Text = Convert.ToString(oldTravel.Mã_vùng);
@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1
             var oldTravel = this.Bussiness.GetTravel(this.TravelID);
             this.txtID.Text = oldTravel.ID;
             this.txtHo.Text = oldTravel.Họ;
-            this.txtTenLot.Text = oldTravel.Tên_đệm;
+            this.txtTenLot.Text = oldTravel.Tên_lót;
             this.txtTen.Text = oldTravel.Tên;
             this.txtDiaChi.Text = oldTravel.Địa_chỉ;
             this.txtMaVung.Text = Convert.ToString(oldTravel.Mã_vùng);

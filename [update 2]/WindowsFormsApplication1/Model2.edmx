@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TravelManModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="THONGTINKHACHHANG">
           <Key>
             <PropertyRef Name="Số Thứ Tự" />
@@ -12,7 +12,7 @@
           <Property Name="Số Thứ Tự" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Họ" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Tên đệm" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tên lót" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Tên" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Địa chỉ" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Mã vùng" Type="int" />
@@ -25,14 +25,14 @@
           <Property Name="Số lượng" Type="int" />
           <Property Name="Tiền" Type="int" />
         </EntityType>
-        <EntityContainer Name="TravelManModelStoreContainer">
+        <EntityContainer Name="testModelStoreContainer">
           <EntitySet Name="THONGTINKHACHHANG" EntityType="Self.THONGTINKHACHHANG" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TravelManModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="THONGTINKHACHHANG">
           <Key>
             <PropertyRef Name="Số_Thứ_Tự" />
@@ -40,7 +40,7 @@
           <Property Name="Số_Thứ_Tự" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Họ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Tên_đệm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tên_lót" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Tên" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Địa_chỉ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Mã_vùng" Type="Int32" />
@@ -53,7 +53,7 @@
           <Property Name="Số_lượng" Type="Int32" />
           <Property Name="Tiền" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="TravelManEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="THONGTINKHACHHANGs" EntityType="Self.THONGTINKHACHHANG" />
         </EntityContainer>
       </Schema>
@@ -61,14 +61,14 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TravelManModelStoreContainer" CdmEntityContainer="TravelManEntities">
+        <EntityContainerMapping StorageEntityContainer="testModelStoreContainer" CdmEntityContainer="testEntities">
           <EntitySetMapping Name="THONGTINKHACHHANGs">
-            <EntityTypeMapping TypeName="TravelManModel.THONGTINKHACHHANG">
+            <EntityTypeMapping TypeName="testModel.THONGTINKHACHHANG">
               <MappingFragment StoreEntitySet="THONGTINKHACHHANG">
                 <ScalarProperty Name="Số_Thứ_Tự" ColumnName="Số Thứ Tự" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Họ" ColumnName="Họ" />
-                <ScalarProperty Name="Tên_đệm" ColumnName="Tên đệm" />
+                <ScalarProperty Name="Tên_lót" ColumnName="Tên lót" />
                 <ScalarProperty Name="Tên" ColumnName="Tên" />
                 <ScalarProperty Name="Địa_chỉ" ColumnName="Địa chỉ" />
                 <ScalarProperty Name="Mã_vùng" ColumnName="Mã vùng" />

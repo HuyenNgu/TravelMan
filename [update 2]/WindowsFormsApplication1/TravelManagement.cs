@@ -10,7 +10,7 @@ namespace WindowsFormsApplication1
     {
         public THONGTINKHACHHANG[] GetTravel()
         {
-            var db = new TRAVELMANAGEMENT2();
+            var db = new testEntities();
             var travel = db.THONGTINKHACHHANGs.ToArray();
             return travel;
         }
@@ -21,7 +21,7 @@ namespace WindowsFormsApplication1
             var newTravel = new THONGTINKHACHHANG();
             newTravel.ID = ID;
             newTravel.Họ = Họ;
-            newTravel.Tên_đệm = Tên_đệm;
+            newTravel.Tên_lót = Tên_đệm;
             newTravel.Tên = Tên;
             newTravel.Địa_chỉ = Địa_chỉ;
             newTravel.Mã_vùng = Mã_vùng;
@@ -34,7 +34,7 @@ namespace WindowsFormsApplication1
             newTravel.Số_lượng = Số_lượng;
             newTravel.Tiền = Tiền;
 
-            var db = new TRAVELMANAGEMENT2();
+            var db = new testEntities();
             db.THONGTINKHACHHANGs.Add(newTravel);
             db.SaveChanges();
         }
@@ -43,12 +43,12 @@ namespace WindowsFormsApplication1
             int Mã_vùng, string Số_Điện_Thoại, string Khởi_hành, string Nơi_đến, string Phương_Tiện,
             string Loại_vé, string Người_sử_dụng, int Số_lượng, int Tiền)
         {
-            var db = new TRAVELMANAGEMENT2();
+            var db = new testEntities();
             var oldTravel = db.THONGTINKHACHHANGs.Find(id);
 
             oldTravel.ID = ID;
             oldTravel.Họ = Họ;
-            oldTravel.Tên_đệm = Tên_đệm;
+            oldTravel.Tên_lót = Tên_đệm;
             oldTravel.Tên = Tên;
             oldTravel.Địa_chỉ = Địa_chỉ;
             oldTravel.Mã_vùng = Mã_vùng;
@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
 
         public void DeleteTicket(int id)
         {
-            var db = new TRAVELMANAGEMENT2();
+            var db = new testEntities();
             var @travel = db.THONGTINKHACHHANGs.Find(id);
             db.THONGTINKHACHHANGs.Remove(@travel);
             db.SaveChanges();
@@ -75,9 +75,9 @@ namespace WindowsFormsApplication1
 
         public THONGTINKHACHHANG GetTravel(int id)
         {
-            var db = new TRAVELMANAGEMENT2();
-            var @class = db.THONGTINKHACHHANGs.Find(id);
-            return @class;
+            var db = new testEntities();
+            var @travel = db.THONGTINKHACHHANGs.Find(id);
+            return @travel;
         }
     }
 }

@@ -19,19 +19,23 @@ namespace WindowsFormsApplication1
            
             this.Business = new TravelManagement();
             this.Load += IndexForm_Load;
+            //this.btnXemGiaTien.Click +=btnXemGiaTien_Click;
             InitializeComponent();
+            
         }
 
-        private void btnXemGiaTien_Click(object sender, EventArgs e)
-         {
-             var MoneyForm = new MoneyForm();
-             MoneyForm.ShowDialog();
-             this.LoadAll();
+        void btnXemGiaTien_Click(object sender, EventArgs e)
+        {
+            var MoneyForm = new MoneyForm();
+            MoneyForm.ShowDialog();
+            this.LoadAll();
         }
-
         private void LoadAll()
         {
-            var travel = this.Business.GetTravel();
+            //var travel = this.Business.GetTravel();
+            //this.grdTravel.DataSource = travel;
+            var db = new testEntities();
+            var travel = db.THONGTINKHACHHANGs.ToArray();
             this.grdTravel.DataSource = travel;
         }
 
@@ -63,7 +67,7 @@ namespace WindowsFormsApplication1
         
         }
 
-        private void btnThanhToan_Click(object sender, EventArgs e)
+        private void btnInHoaDon_Click(object sender, EventArgs e)
         {
             
             
@@ -80,27 +84,63 @@ namespace WindowsFormsApplication1
                
                 + "\n----------------------------------------------------------------------------------------------------------------"
                 + "\nID:\t\t\t" + txtID.Text
-                + "\nHọ và Tên: " + txtHo.Text  + txtTenLot.Text  +  txtTen.Text             
-                + "\nĐịa Chỉ:\t\t\t" + txtDiaChi.Text
-                + "\nMã Vùng:\t\t\t" + txtMaVung.Text
+                + "\nHo và Ten:\t\t" + txtHo.Text  + txtTenLot.Text  +  txtTen.Text             
+                + "\nDia Chi:\t\t\t" + txtDiaChi.Text
+                + "\nMa Vung:\t\t\t" + txtMaVung.Text
                 + "\nSĐT:\t\t\t" + txtSDT.Text
-                + "\nNơi Khởi Hành:\t\t" + cbKhoiHanh.Text
-                + "\nNơi Đến:\t\t\t" + cbNoiDen.Text
-                + "\nPhương Tiện:\t\t\t" + cbPhuongTien.Text
+                + "\nNoi Khoi Hanh:\t\t" + txtKhoiHanh.Text
+                + "\nNoi Den:\t\t\t" + txtNoiDen.Text
+                + "\nPhuong Tien:\t\t" + txtPhuongTien.Text
                 + "\n----------------------------------------------------------------------------------------------------------------"
-                + "\nTổng cộng:\t\t\t" + txtMoney.Text
+                + "\nTong cong:\t\t\t" + txtMoney.Text
                 + "\n----------------------------------------------------------------------------------------------------------------"
                 + "\n\n\t Cám ơn đã sử dụng bạn đã sử dụng hệ thống"
             );
         }
 
-        private void lblTime_Click(object sender, EventArgs e)
-        {
-            DateTime Time = DateTime.Now;
-            lblTime.Text = Time.ToLongTimeString();
+      
 
-            DateTime Date = DateTime.Now;
-            lblDate.Text = Time.ToLongDateString();
+        private void rdbTietKiem_CheckedChanged(object sender, EventArgs e)
+        {
+            int valueinfo = 0;
+
+            int count_int = 0;
+
+            if (rdbTietKiem.Checked)
+            {
+                valueinfo = 5000;
+                count_int = count_int + 5000;
+               
+            }
+        }
+
+        private void rdbThuong_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbThuong.Checked)
+            {
+                int valueinfo = 0;
+
+                int count_int = 0;
+
+                valueinfo = 10000;
+                count_int = count_int + 10000;
+                
+            }
+        }
+
+        private void rdbThuongGia_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (rdbThuongGia.Checked)
+            {
+                int valueinfo = 0;
+
+                int count_int = 0;
+
+                valueinfo = 15000;
+                count_int = count_int + 15000;
+                
+            }
         }
 
     }

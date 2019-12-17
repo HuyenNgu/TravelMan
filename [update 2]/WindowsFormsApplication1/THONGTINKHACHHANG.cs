@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
         public int Số_Thứ_Tự { get; set; }
         public string ID { get; set; }
         public string Họ { get; set; }
-        public string Tên_đệm { get; set; }
+        public string Tên_lót { get; set; }
         public string Tên { get; set; }
         public string Địa_chỉ { get; set; }
         public Nullable<int> Mã_vùng { get; set; }

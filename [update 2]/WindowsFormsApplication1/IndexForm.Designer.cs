@@ -50,9 +50,9 @@
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtMaVung = new System.Windows.Forms.TextBox();
             this.Panel2 = new System.Windows.Forms.Panel();
-            this.cbNoiDen = new System.Windows.Forms.ComboBox();
-            this.cbKhoiHanh = new System.Windows.Forms.ComboBox();
-            this.cbPhuongTien = new System.Windows.Forms.ComboBox();
+            this.txtPhuongTien = new System.Windows.Forms.TextBox();
+            this.txtNoiDen = new System.Windows.Forms.TextBox();
+            this.txtKhoiHanh = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
@@ -68,13 +68,12 @@
             this.txtMoney = new System.Windows.Forms.TextBox();
             this.btnXemGiaTien = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnThanhToan = new System.Windows.Forms.Button();
             this.grdTravel = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.rtReceipt = new System.Windows.Forms.RichTextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
+            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.btnInHoaDon = new System.Windows.Forms.Button();
             this.Panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.Panel1.SuspendLayout();
@@ -160,6 +159,7 @@
             this.rdbThuongGia.TabStop = true;
             this.rdbThuongGia.Text = "Thương gia";
             this.rdbThuongGia.UseVisualStyleBackColor = true;
+            this.rdbThuongGia.CheckedChanged += new System.EventHandler(this.rdbThuongGia_CheckedChanged);
             // 
             // rdbThuong
             // 
@@ -172,6 +172,7 @@
             this.rdbThuong.TabStop = true;
             this.rdbThuong.Text = "Thường";
             this.rdbThuong.UseVisualStyleBackColor = true;
+            this.rdbThuong.CheckedChanged += new System.EventHandler(this.rdbThuong_CheckedChanged);
             // 
             // rdbTietKiem
             // 
@@ -184,6 +185,7 @@
             this.rdbTietKiem.TabStop = true;
             this.rdbTietKiem.Text = "Tiết kiệm";
             this.rdbTietKiem.UseVisualStyleBackColor = true;
+            this.rdbTietKiem.CheckedChanged += new System.EventHandler(this.rdbTietKiem_CheckedChanged);
             // 
             // label11
             // 
@@ -292,9 +294,9 @@
             // Panel2
             // 
             this.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Panel2.Controls.Add(this.cbNoiDen);
-            this.Panel2.Controls.Add(this.cbKhoiHanh);
-            this.Panel2.Controls.Add(this.cbPhuongTien);
+            this.Panel2.Controls.Add(this.txtPhuongTien);
+            this.Panel2.Controls.Add(this.txtNoiDen);
+            this.Panel2.Controls.Add(this.txtKhoiHanh);
             this.Panel2.Controls.Add(this.Label9);
             this.Panel2.Controls.Add(this.Label8);
             this.Panel2.Controls.Add(this.Label7);
@@ -304,85 +306,26 @@
             this.Panel2.Size = new System.Drawing.Size(431, 114);
             this.Panel2.TabIndex = 17;
             // 
-            // cbNoiDen
+            // txtPhuongTien
             // 
-            this.cbNoiDen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbNoiDen.FormattingEnabled = true;
-            this.cbNoiDen.Items.AddRange(new object[] {
-            "Quận 1",
-            "Quận 2",
-            "Quận 3",
-            "Quận 4",
-            "Quận 5",
-            "Quận 6",
-            "Quận 7",
-            "Quận 8",
-            "Quận 9",
-            "Quận 10",
-            "Quận 11",
-            "Quận 12",
-            "Quận Thủ Đức",
-            "Quận Gò Vấp",
-            "Quận Bình Thạnh",
-            "Quận Tân Bình",
-            "Quận Tân Phú",
-            "Quận Phú Nhuận",
-            "Quận Bình Tân"});
-            this.cbNoiDen.Location = new System.Drawing.Point(137, 38);
-            this.cbNoiDen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbNoiDen.Name = "cbNoiDen";
-            this.cbNoiDen.Size = new System.Drawing.Size(257, 24);
-            this.cbNoiDen.TabIndex = 20;
+            this.txtPhuongTien.Location = new System.Drawing.Point(142, 70);
+            this.txtPhuongTien.Name = "txtPhuongTien";
+            this.txtPhuongTien.Size = new System.Drawing.Size(244, 22);
+            this.txtPhuongTien.TabIndex = 19;
             // 
-            // cbKhoiHanh
+            // txtNoiDen
             // 
-            this.cbKhoiHanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhoiHanh.FormattingEnabled = true;
-            this.cbKhoiHanh.IntegralHeight = false;
-            this.cbKhoiHanh.Items.AddRange(new object[] {
-            "Quận 1",
-            "Quận 2",
-            "Quận 3",
-            "Quận 4",
-            "Quận 5",
-            "Quận 6",
-            "Quận 7",
-            "Quận 8",
-            "Quận 9",
-            "Quận 10",
-            "Quận 11",
-            "Quận 12",
-            "Quận Thủ Đức",
-            "Quận Gò Vấp",
-            "Quận Bình Thạnh",
-            "Quận Tân Bình",
-            "Quận Tân Phú",
-            "Quận Phú Nhuận",
-            "Quận Bình Tân"});
-            this.cbKhoiHanh.Location = new System.Drawing.Point(137, 9);
-            this.cbKhoiHanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbKhoiHanh.Name = "cbKhoiHanh";
-            this.cbKhoiHanh.Size = new System.Drawing.Size(257, 24);
-            this.cbKhoiHanh.TabIndex = 19;
+            this.txtNoiDen.Location = new System.Drawing.Point(142, 38);
+            this.txtNoiDen.Name = "txtNoiDen";
+            this.txtNoiDen.Size = new System.Drawing.Size(244, 22);
+            this.txtNoiDen.TabIndex = 18;
             // 
-            // cbPhuongTien
+            // txtKhoiHanh
             // 
-            this.cbPhuongTien.AutoCompleteCustomSource.AddRange(new string[] {
-            "Xe máy",
-            "Xe hơi",
-            "Tàu hỏa"});
-            this.cbPhuongTien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPhuongTien.FormattingEnabled = true;
-            this.cbPhuongTien.Items.AddRange(new object[] {
-            "Xe máy",
-            "Xe hơi",
-            "Tàu hỏa"});
-            this.cbPhuongTien.Location = new System.Drawing.Point(137, 66);
-            this.cbPhuongTien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbPhuongTien.Name = "cbPhuongTien";
-            this.cbPhuongTien.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbPhuongTien.Size = new System.Drawing.Size(257, 24);
-            this.cbPhuongTien.TabIndex = 18;
+            this.txtKhoiHanh.Location = new System.Drawing.Point(142, 7);
+            this.txtKhoiHanh.Name = "txtKhoiHanh";
+            this.txtKhoiHanh.Size = new System.Drawing.Size(244, 22);
+            this.txtKhoiHanh.TabIndex = 17;
             // 
             // txtDiaChi
             // 
@@ -485,7 +428,7 @@
             // 
             // btnTongCong
             // 
-            this.btnTongCong.Location = new System.Drawing.Point(55, 146);
+            this.btnTongCong.Location = new System.Drawing.Point(58, 106);
             this.btnTongCong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTongCong.Name = "btnTongCong";
             this.btnTongCong.Size = new System.Drawing.Size(115, 50);
@@ -543,17 +486,6 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Payment";
             // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.Location = new System.Drawing.Point(1081, 630);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(115, 50);
-            this.btnThanhToan.TabIndex = 3;
-            this.btnThanhToan.Text = "Thanh Toán";
-            this.btnThanhToan.UseVisualStyleBackColor = true;
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
             // grdTravel
             // 
             this.grdTravel.AllowUserToAddRows = false;
@@ -599,35 +531,38 @@
             this.label16.TabIndex = 23;
             this.label16.Text = "RECEIPT";
             // 
-            // lblTime
+            // btnThanhToan
             // 
-            this.lblTime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTime.Location = new System.Drawing.Point(1170, 710);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(198, 31);
-            this.lblTime.TabIndex = 24;
-            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
+            this.btnThanhToan.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnThanhToan.Location = new System.Drawing.Point(963, 634);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(117, 50);
+            this.btnThanhToan.TabIndex = 24;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.UseVisualStyleBackColor = false;
             // 
-            // lblDate
+            // btnInHoaDon
             // 
-            this.lblDate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDate.Location = new System.Drawing.Point(949, 710);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(215, 31);
-            this.lblDate.TabIndex = 25;
+            this.btnInHoaDon.Location = new System.Drawing.Point(1223, 634);
+            this.btnInHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(115, 50);
+            this.btnInHoaDon.TabIndex = 3;
+            this.btnInHoaDon.Text = "In Hóa Đơn";
+            this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // IndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 750);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.rtReceipt);
             this.Controls.Add(this.Panel3);
             this.Controls.Add(this.Panel2);
-            this.Controls.Add(this.btnThanhToan);
+            this.Controls.Add(this.btnInHoaDon);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Panel1);
             this.Controls.Add(this.panel4);
@@ -674,9 +609,6 @@
         internal System.Windows.Forms.TextBox txtSDT;
         internal System.Windows.Forms.TextBox txtMaVung;
         internal System.Windows.Forms.Panel Panel2;
-        private System.Windows.Forms.ComboBox cbNoiDen;
-        private System.Windows.Forms.ComboBox cbKhoiHanh;
-        private System.Windows.Forms.ComboBox cbPhuongTien;
         internal System.Windows.Forms.TextBox txtDiaChi;
         internal System.Windows.Forms.TextBox txtTen;
         internal System.Windows.Forms.Label Label2;
@@ -689,7 +621,6 @@
         protected System.Windows.Forms.Button btnHuyVe;
         private System.Windows.Forms.TextBox txtMoney;
         protected System.Windows.Forms.Button btnXemGiaTien;
-        private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Label label14;
         internal System.Windows.Forms.DataGridView grdTravel;
         private System.Windows.Forms.Panel panel5;
@@ -697,7 +628,10 @@
         private System.Windows.Forms.RichTextBox rtReceipt;
         private System.Windows.Forms.Label label16;
         protected System.Windows.Forms.Button btnTongCong;
-        private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.TextBox txtPhuongTien;
+        private System.Windows.Forms.TextBox txtNoiDen;
+        private System.Windows.Forms.TextBox txtKhoiHanh;
+        private System.Windows.Forms.Button btnThanhToan;
+        private System.Windows.Forms.Button btnInHoaDon;
     }
 }

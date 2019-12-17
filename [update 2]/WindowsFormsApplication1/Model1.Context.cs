@@ -13,10 +13,10 @@ namespace WindowsFormsApplication1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TRAVELMANAGEMENT2 : DbContext
+    public partial class TravelManEntities : DbContext
     {
-        public TRAVELMANAGEMENT2()
-            : base("name=TRAVELMANAGEMENT2")
+        public TravelManEntities()
+            : base("name=TravelManEntities")
         {
         }
     
