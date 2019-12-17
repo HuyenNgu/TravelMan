@@ -12,10 +12,10 @@ namespace WindowsFormsApplication1
     using System;
     using System.Collections.Generic;
     
-    public partial class ThongTinGiaTien
+    public partial class Thong_Tin_Ve
     {
         public int Id { get; set; }
-        public string ten { get; set; }
-        public int Gia_Tien { get; set; }
+        public string Ten { get; set; }
+        public Nullable<int> Gia_Tien { get; set; }
     }
 }

@@ -80,11 +80,13 @@ namespace WindowsFormsApplication1
             return @travel;
         }
 
-        public int GetMoney(int MaKhoiHanh, int MaNoiDen)
+        public int GetMoney(int MaKhoiHanh, int MaNoiDen)//, int PhuongTien)
         {
             var db = new testEntities();
             var thongtingiatien = db.ThongTinGiaTiens.ToArray();
+            var thongtinphuongtien = db.Thong_Tin_Phuong_Tiens.ToArray();
             var tien = 0;
+            var tien1 = 0;
             for (int i = 0; i < thongtingiatien.Length; i++)
             {
                 if(thongtingiatien[i].Id == MaKhoiHanh || thongtingiatien[i].Id == MaNoiDen)
@@ -92,6 +94,13 @@ namespace WindowsFormsApplication1
                     tien += thongtingiatien[i].Gia_Tien;
                 }
             }
+            //for (int i = 0; i < thongtingiatien.Length; i++)
+            //{
+                //if(thongtinphuongtien[i].Id == PhuongTien)
+                //{
+                    //tien += thongtinphuongtien[i].Gia_Tien;
+                //}
+            //}
 
                 return tien;
         }

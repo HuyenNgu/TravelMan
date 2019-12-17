@@ -5,6 +5,30 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Thong Tin Phuong Tien">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Ten" Type="varchar" MaxLength="50" />
+          <Property Name="Gia Tien" Type="int" />
+        </EntityType>
+        <EntityType Name="Thong Tin Ve">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Ten" Type="varchar" MaxLength="50" />
+          <Property Name="Gia Tien" Type="int" />
+        </EntityType>
+        <EntityType Name="Thong Tin Ve 2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Ten" Type="varchar" MaxLength="50" />
+          <Property Name="Gia Tien" Type="int" />
+        </EntityType>
         <EntityType Name="ThongTinGiaTien">
           <Key>
             <PropertyRef Name="Id" />
@@ -34,6 +58,9 @@
           <Property Name="Tiền" Type="int" />
         </EntityType>
         <EntityContainer Name="testModelStoreContainer">
+          <EntitySet Name="Thong Tin Phuong Tien" EntityType="Self.Thong Tin Phuong Tien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Thong Tin Ve" EntityType="Self.Thong Tin Ve" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Thong Tin Ve 2" EntityType="Self.Thong Tin Ve 2" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThongTinGiaTien" EntityType="Self.ThongTinGiaTien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THONGTINKHACHHANG" EntityType="Self.THONGTINKHACHHANG" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -64,6 +91,9 @@
         <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="THONGTINKHACHHANGs" EntityType="Self.THONGTINKHACHHANG" />
           <EntitySet Name="ThongTinGiaTiens" EntityType="testModel.ThongTinGiaTien" />
+          <EntitySet Name="Thong_Tin_Phuong_Tiens" EntityType="testModel.Thong_Tin_Phuong_Tien" />
+          <EntitySet Name="Thong_Tin_Ves" EntityType="testModel.Thong_Tin_Ve" />
+          <EntitySet Name="Thong_Tin_Ve_2" EntityType="testModel.Thong_Tin_Ve_2" />
         </EntityContainer>
         <EntityType Name="ThongTinGiaTien">
           <Key>
@@ -72,6 +102,30 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="ten" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Gia_Tien" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Thong_Tin_Phuong_Tien">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gia_Tien" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Thong_Tin_Ve">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gia_Tien" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Thong_Tin_Ve_2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gia_Tien" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -105,6 +159,33 @@
               <MappingFragment StoreEntitySet="ThongTinGiaTien">
                 <ScalarProperty Name="Gia_Tien" ColumnName="Gia Tien" />
                 <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Thong_Tin_Phuong_Tiens">
+            <EntityTypeMapping TypeName="testModel.Thong_Tin_Phuong_Tien">
+              <MappingFragment StoreEntitySet="Thong Tin Phuong Tien">
+                <ScalarProperty Name="Gia_Tien" ColumnName="Gia Tien" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Thong_Tin_Ves">
+            <EntityTypeMapping TypeName="testModel.Thong_Tin_Ve">
+              <MappingFragment StoreEntitySet="Thong Tin Ve">
+                <ScalarProperty Name="Gia_Tien" ColumnName="Gia Tien" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Thong_Tin_Ve_2">
+            <EntityTypeMapping TypeName="testModel.Thong_Tin_Ve_2">
+              <MappingFragment StoreEntitySet="Thong Tin Ve 2">
+                <ScalarProperty Name="Gia_Tien" ColumnName="Gia Tien" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

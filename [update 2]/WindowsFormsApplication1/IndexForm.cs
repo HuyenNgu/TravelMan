@@ -41,7 +41,8 @@ namespace WindowsFormsApplication1
         {
             var MaKhoiHanh = int.Parse(this.cbKhoiHanh.SelectedValue.ToString());
             var MaNoiDen = int.Parse(this.cbNoiDen.SelectedValue.ToString());
-            var tongTien = this.Business.GetMoney(MaKhoiHanh,MaNoiDen);
+            //var MaPhuongTien = int.Parse(this.cbPhuongTien.SelectedItem.ToString());
+            var tongTien = this.Business.GetMoney(MaKhoiHanh, MaNoiDen);//,MaPhuongTien);
             this.txtMoney.Text = tongTien.ToString();
         }
 
@@ -67,6 +68,11 @@ namespace WindowsFormsApplication1
             this.cbNoiDen.DataSource = DiaDiemNoiDen;
             this.cbNoiDen.DisplayMember = "ten";
             this.cbNoiDen.ValueMember = "Id";
+
+            var PhuongTien = db.Thong_Tin_Phuong_Tiens.ToArray();
+            this.cbPhuongTien.DataSource = PhuongTien;
+            this.cbPhuongTien.DisplayMember = "ten";
+            this.cbPhuongTien.ValueMember = "Id";
         }
 
         void IndexForm_Load(object sender, EventArgs e)
