@@ -65,7 +65,7 @@ namespace WindowsFormsApplication1
             db.SaveChanges();
         }
 
-        public void DeleteTicket(int id)
+        public void DeleteTicket(string id)
         {
             var db = new testEntities();
             var @travel = db.THONGTINKHACHHANGs.Find(id);
@@ -86,7 +86,7 @@ namespace WindowsFormsApplication1
             var thongtingiatien = db.ThongTinGiaTiens.ToArray();
             var thongtinphuongtien = db.Thong_Tin_Phuong_Tiens.ToArray();
             var tien = 0;
-            var tien1 = 0;
+            //var tien1 = 0;
             for (int i = 0; i < thongtingiatien.Length; i++)
             {
                 if(thongtingiatien[i].Id == MaKhoiHanh || thongtingiatien[i].Id == MaNoiDen)

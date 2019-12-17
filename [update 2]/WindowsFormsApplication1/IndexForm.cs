@@ -34,7 +34,13 @@ namespace WindowsFormsApplication1
 
         void btnHuyVe_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (this.grdTravel.SelectedRows.Count == 1)
+            {
+                var tvl = (ViewTTKH)this.grdTravel.SelectedRows[0].DataBoundItem;
+                this.Business.DeleteTicket(tvl.ID);
+                this.LoadAll();
+            }
+                
         }
 
         void btnTongCong_Click(object sender, EventArgs e)
@@ -100,7 +106,8 @@ namespace WindowsFormsApplication1
 
             checkBox1.Checked = false;
             checkBox2.Checked = false;
-        
+
+     
         }
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
